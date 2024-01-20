@@ -753,7 +753,7 @@ def check_validation_split_arg(validation_split, subset, shuffle, seed):
         shuffle: Whether to shuffle the data. Either `True` or `False`.
         seed: random seed for shuffling and transformations.
     """
-    if validation_split and not 0 < validation_split < 1:
+    if validation_split is not None and not 0 < validation_split < 1:
         raise ValueError(
             "`validation_split` must be between 0 and 1, "
             f"received: {validation_split}"
